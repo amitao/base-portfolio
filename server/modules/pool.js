@@ -23,7 +23,7 @@ if (process.env.DATABASE_URL) {
   config = {
     host: 'localhost',
     port: 5432,
-    databse: 'portfolio',
+    database: 'portfolio',
     max: 10,
     idleTimeoutMillis: 3000,
   };
