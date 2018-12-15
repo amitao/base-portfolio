@@ -11,8 +11,9 @@ class ProjectList extends Component {
   }
 
   render () {
-
-    let list = this.props.reduxState.projectList.map( project => {
+     // don't have to use -> this.props.redxState.<reducerName>.map(){}
+     // this.props.projectList(comes from the )
+    let list = this.props.projectList.map( project => {
       return (
         <div key={project.id}>
           <p>{project.name}</p>
@@ -33,7 +34,7 @@ class ProjectList extends Component {
 
 const mapStateToProps = reduxState => ({
   // getting data from reducer "projectList" that is contain in the redux store
-  reduxState
+  projectList: reduxState.projectList
 });
 
 

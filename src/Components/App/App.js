@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import ProjectsMain from '../Projects/ProjectsMain';
+import ProjectsForm from '../Admin/ProjectForm';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 
 class App extends Component {
@@ -13,6 +15,10 @@ class App extends Component {
           <Header />
         </header>
         <ProjectsMain />
+        <Router>
+          {/* links to url /admin */}
+          <Route path='/admin' component={ProjectsForm} />
+        </Router>
       </div>
     );
   }

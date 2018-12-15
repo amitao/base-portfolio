@@ -3,6 +3,7 @@
 // needs form/input/button fields and tags
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
 class ProjectFrom extends Component {
