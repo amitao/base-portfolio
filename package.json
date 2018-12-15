@@ -2,14 +2,21 @@
   "name": "base-portfolio",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/server.js",
+    "client": "react-scripts start",
     "build": "react-scripts build",
+    "server": "nodemon  --watch server server/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
