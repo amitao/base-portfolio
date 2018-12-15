@@ -19,7 +19,7 @@ function* rootSaga() {
 
 // SAGA AXIOS ACTIONS
 function* fetchProjectResponse() {
-  const projects = yield call(axios.get, '/project')
+  const projects = yield call(axios.get, '/api/project')
   yield dispatch({ type: 'SET_PROJECTS', payload: projects.data})
 }
 

@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './ProjectList.css';
 
 class ProjectList extends Component {
 
@@ -18,7 +19,8 @@ class ProjectList extends Component {
         <div key={project.id}>
           <p>{project.name}</p>
           <p>{project.description}</p>
-          <p>{project.thumbnail} <a href={project.github}>Github</a> </p>
+          <p><img src={project.thumbnail} alt="images"/> </p>
+          <p><a href={project.github}>Github</a> </p>
         </div>
       )
     })

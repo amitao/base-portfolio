@@ -10,16 +10,17 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <Header />
-        </header>
-        <ProjectsMain />
-        <Router>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <Header />
+          </header>
           {/* links to url /admin */}
+          <Route path='/' exact component={ProjectsMain} />
           <Route path='/admin' component={ProjectsForm} />
-        </Router>
-      </div>
+
+        </div>
+      </Router>
     );
   }
 }

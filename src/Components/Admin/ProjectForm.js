@@ -16,4 +16,4 @@ class ProjectFrom extends Component {
   }
 }
 
-export default ProjectFrom;
+export default connect()(ProjectFrom);

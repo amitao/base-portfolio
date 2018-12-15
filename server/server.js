@@ -11,8 +11,8 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
-app.use('/project', projectsRouter);
-app.use('/tag', tagsRouter);
+app.use('/api/project', projectsRouter);
+app.use('/api/tag', tagsRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {
