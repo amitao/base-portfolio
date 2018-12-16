@@ -5,7 +5,7 @@ const router = express.Router();
 
 // gets all data from the tags table
 router.get('/', (req, res) => {
-  const queryString = `SELECT FROM "tags" ORDER BY "name" ASC;`;
+  let queryString = `SELECT * FROM "tags" ORDER BY "name" ASC;`;
 
   pool.query(queryString)
   .then ( result => {
@@ -17,4 +17,4 @@ router.get('/', (req, res) => {
   });
 });
 
-module.exports = router
+module.exports = router;

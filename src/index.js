@@ -14,17 +14,32 @@ import axios from 'axios';
 
 // WATCHER: Create the rootSaga generator function
 function* rootSaga() {
-  yield takeEvery('FETCH_PROJECTS', fetchProjectResponse);
+  yield takeEvery('FETCH_PROJECTS', fetchProject);
+  yield takeEvery('ADD_PROJECT', addProject);
+  yield takeEvery('FETCH_TAGS', fetchTag);
+  yield takeEvery('DETELE', deleteProjects);
 }
 
 // SAGA AXIOS ACTIONS
-function* fetchProjectResponse() {
-  const projects = yield call(axios.get, '/api/project')
-  yield dispatch({ type: 'SET_PROJECTS', payload: projects.data})
+function* fetchProject() {
+  const projects = yield call(axios.get, '/api/project');
+  yield dispatch({ type: 'SET_PROJECTS', payload: projects.data});
+}
+// adding new project to db
+function* addProject(action) {
+  yield call(axios.post, '/api/project', action.payload)
+  yield dispatch({type: 'FETCH_PROJECTS'});
 }
 
+function* fetchTag() {
+  const tags = yield call(axios.get, '/api/tag');
+  yield dispatch({ type: 'SET_TAGS', payload: tags.data});
+}
 
-
+function* deleteProjects(action) {
+  yield call(axios.delete, `/api/project/${action.payload}`);
+  yield dispatch({type: 'FETCH_PROJECTS'});
+}
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
