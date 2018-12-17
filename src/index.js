@@ -32,8 +32,8 @@ function* addProject(action) {
 }
 
 function* fetchTag() {
-  const tags = yield call(axios.get, '/api/tag');
-  yield dispatch({ type: 'SET_TAGS', payload: tags.data});
+   const tags= yield call(axios.get, '/api/tag');
+   yield dispatch({ type: 'SET_TAGS', payload: tags.data});
 }
 
 function* deleteProjects(action) {
